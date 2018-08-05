@@ -1,10 +1,10 @@
 const withTypescript = require("@zeit/next-typescript");
-const debug = process.env.NODE_ENV !== "production";
+const withCSS = require("@zeit/next-css");
 
-module.export = withTypescript({
+module.exports = withTypescript(withCSS({
     exportPathMap: () => {
         return {
             "/": { page: "/" }
         }
     }
-});
+}));
