@@ -26,7 +26,7 @@ class Projects extends Component<{}, State> {
         name: "Elmix",
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
-        link: "https://oyah.xyz"
+        link: "https://elmix-website.herokuapp.com/"
       }
     ]
   };
