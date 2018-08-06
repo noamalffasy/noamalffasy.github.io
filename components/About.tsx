@@ -8,7 +8,7 @@ class About extends Component {
         <h1>About</h1>
         <p>
           I'm Noam Alffasy. I love making everything, from websites to
-          applications to apps, name it and I'l do it and No matter what I make,
+          applications to apps, name it and I'l do it and no matter what I make,
           I'll make sure it looks great.
         </p>
         <style jsx>{`
