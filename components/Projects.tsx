@@ -118,6 +118,11 @@ class Project extends Component<Props> {
             margin: 0 1rem 3rem;
             padding: 1.5rem 0.5rem;
             /* width: calc((100% * 1 / 2) - (1rem * 2)); */
+            /* box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15); */
+            transition: all 0.3s;
+          }
+
+          .Project:hover {
             box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15);
           }
 
