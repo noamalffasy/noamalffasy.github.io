@@ -80,7 +80,7 @@ interface Props {
 }
 
 class Project extends Component<Props> {
-  getComponent(name) {
+  getComponent(name: string) {
     switch (name) {
       case "Oyah":
         return <Oyah />;
