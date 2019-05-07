@@ -7,6 +7,7 @@ interface ProjectInterface {
   name: string;
   description: string;
   link: string;
+  svg: JSX.Element;
 }
 
 interface State {
@@ -20,13 +21,15 @@ class Projects extends Component<{}, State> {
         name: "Oyah",
         description:
           "A Super Smash Bros. Melee website, it includes everything from news to tutorials",
-        link: "https://oyah.xyz"
+        link: "https://oyah.xyz",
+        svg: <Oyah />
       },
       {
         name: "Elmix",
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
-        link: "https://elmix-website.herokuapp.com/"
+        link: "https://elmix-website.herokuapp.com/",
+        svg: <Elmix />
       }
     ]
   };
@@ -80,20 +83,11 @@ interface Props {
 }
 
 class Project extends Component<Props> {
-  getComponent(name: string) {
-    switch (name) {
-      case "Oyah":
-        return <Oyah />;
-      case "Elmix":
-        return <Elmix />;
-    }
-  }
-
   render() {
-    const { name, description, link } = this.props.project;
+    const { name, description, link, svg } = this.props.project;
     return (
       <div className="Project">
-        {this.getComponent(name)}
+        {svg}
         <h2>{name}</h2>
         <p>{description}</p>
         <a href={link}>See it here</a>
