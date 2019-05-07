@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
 
-import { Oyah, Elmix, SchoolWebsite } from "components/svgs";
+import { Oyah, Elmix, SchoolWebsite, HebrewGame } from "components/svgs";
 
 interface ProjectInterface {
   name: string;
@@ -19,6 +19,13 @@ class Projects extends Component<{}, State> {
   state = {
     projects: [
       {
+        name: "School Website",
+        description: "A school website I made for my capstone project",
+        link: "https://noamalffasy.me/SchoolWebsite/",
+        codeLink: "https://github.com/noamalffasy/SchoolWebsite",
+        svg: <SchoolWebsite />
+      },
+      {
         name: "Oyah",
         description:
           "A now dead Super Smash Bros. Melee website, it includes everything from news to tutorials",
@@ -27,19 +34,19 @@ class Projects extends Component<{}, State> {
         svg: <Oyah />
       },
       {
+        name: "Hebrew Game",
+        description: "A game I made for a Hebrew work",
+        link: "https://noamalffasy.me/HebrewWork/",
+        codeLink: "https://github.com/noamalffasy/HebrewWork",
+        svg: <HebrewGame />
+      },
+      {
         name: "Elmix",
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
         link: "https://elmix-website.herokuapp.com/",
         codeLink: "https://github.com/noamalffasy/Elmix-Website",
         svg: <Elmix />
-      },
-      {
-        name: "School Website",
-        description: "A school website I made for my capstone project",
-        link: "https://noamalffasy.me/SchoolWebsite/",
-        codeLink: "https://github.com/noamalffasy/SchoolWebsite",
-        svg: <SchoolWebsite />
       }
     ]
   };
@@ -101,7 +108,7 @@ class Project extends Component<Props> {
         <h2>{name}</h2>
         <p>{description}</p>
         <a href={link}>See it here</a>
-        <br/>
+        <br />
         <a href={codeLink}>See the code here</a>
         <style jsx>{`
           .Project {
