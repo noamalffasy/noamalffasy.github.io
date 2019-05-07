@@ -7,6 +7,7 @@ interface ProjectInterface {
   name: string;
   description: string;
   link: string;
+  codeLink: string;
   svg: JSX.Element;
 }
 
@@ -20,8 +21,9 @@ class Projects extends Component<{}, State> {
       {
         name: "Oyah",
         description:
-          "A Super Smash Bros. Melee website, it includes everything from news to tutorials",
-        link: "https://oyah.xyz",
+          "A now dead Super Smash Bros. Melee website, it includes everything from news to tutorials",
+        link: "https://oyah-200816.appspot.com",
+        codeLink: "https://github.com/noamalffasy/Oyah",
         svg: <Oyah />
       },
       {
@@ -29,8 +31,9 @@ class Projects extends Component<{}, State> {
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
         link: "https://elmix-website.herokuapp.com/",
+        codeLink: "https://github.com/noamalffasy/Elmix-Website",
         svg: <Elmix />
-      }
+      },
     ]
   };
 
@@ -84,13 +87,14 @@ interface Props {
 
 class Project extends Component<Props> {
   render() {
-    const { name, description, link, svg } = this.props.project;
+    const { name, description, link, codeLink, svg } = this.props.project;
     return (
       <div className="Project">
         {svg}
         <h2>{name}</h2>
         <p>{description}</p>
         <a href={link}>See it here</a>
+        <a href={codeLink}>See the code here</a>
         <style jsx>{`
           .Project {
             text-align: center;
@@ -112,8 +116,10 @@ class Project extends Component<Props> {
           }
 
           .Project a {
+            display: block;
             font-size: 1.15rem;
             font-weight: 300;
+            margin: 0.5rem 0 0;
           }
 
           .Project a::after {
