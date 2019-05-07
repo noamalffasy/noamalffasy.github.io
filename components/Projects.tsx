@@ -7,7 +7,7 @@ interface ProjectInterface {
   name: string;
   description: string;
   link: string;
-  codeLink: string;
+  codeLink?: string;
   svg: JSX.Element;
 }
 
@@ -45,7 +45,6 @@ class Projects extends Component<{}, State> {
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
         link: "https://elmix-website.herokuapp.com/",
-        codeLink: "https://github.com/noamalffasy/Elmix-Website",
         svg: <Elmix />
       }
     ]
@@ -109,7 +108,7 @@ class Project extends Component<Props> {
         <p>{description}</p>
         <a href={link}>See it here</a>
         <br />
-        <a href={codeLink}>See the code here</a>
+        {codeLink ? <a href={codeLink}>See the code here</a> : null}
         <style jsx>{`
           .Project {
             text-align: center;
