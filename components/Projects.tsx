@@ -101,11 +101,11 @@ class Project extends Component<Props> {
           .Project {
             text-align: center;
             /* background: rgba(0, 0, 0, 0.025); */
-            background: #fbfbfb;
+            background: #f9f9f9;
             margin: 0 1rem 3rem;
             padding: 1.5rem 0.5rem;
             /* width: calc((100% * 1 / 2) - (1rem * 2)); */
-            /* box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15); */
+            box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15);
           }
 
           .Project h2 {
