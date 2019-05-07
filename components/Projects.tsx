@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
 
-import { Oyah, Elmix } from "components/svgs";
+import { Oyah, Elmix, SchoolWebsite } from "components/svgs";
 
 interface ProjectInterface {
   name: string;
@@ -34,6 +34,13 @@ class Projects extends Component<{}, State> {
         codeLink: "https://github.com/noamalffasy/Elmix-Website",
         svg: <Elmix />
       },
+      {
+        name: "School Website",
+        description: "A school website I made for my capstone project",
+        link: "https://noamalffasy.me/SchoolWebsite/",
+        codeLink: "https://github.com/noamalffasy/SchoolWebsite",
+        svg: <SchoolWebsite />
+      }
     ]
   };
 
@@ -94,6 +101,7 @@ class Project extends Component<Props> {
         <h2>{name}</h2>
         <p>{description}</p>
         <a href={link}>See it here</a>
+        <br/>
         <a href={codeLink}>See the code here</a>
         <style jsx>{`
           .Project {
@@ -116,10 +124,10 @@ class Project extends Component<Props> {
           }
 
           .Project a {
-            display: block;
+            display: inline-block;
             font-size: 1.15rem;
             font-weight: 300;
-            margin: 0.5rem 0 0;
+            margin: 0.5rem auto 0;
           }
 
           .Project a::after {
@@ -139,6 +147,8 @@ class Project extends Component<Props> {
             box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
             border-radius: 0.3rem;
             margin: 0 0 1rem 0;
+            pointer-events: none;
+            cursor: default;
           }
         `}</style>
       </div>
