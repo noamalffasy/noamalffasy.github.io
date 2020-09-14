@@ -749,7 +749,7 @@ module.exports = function () {
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1557236414475");
+            injectCss(link, link.href.split("?")[0] + "?unix=1600102673161");
           });
       }
     }
@@ -782,7 +782,7 @@ module.exports = function () {
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1557236414471");
+            injectCss(link, link.href.split("?")[0] + "?unix=1600102673158");
           });
       }
     }
