@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
 
-import { Oyah, Elmix, SchoolWebsite, HebrewGame } from "components/svgs";
+import { Oyah, Elmix, SchoolWebsite, HebrewGame, Demacia } from "components/svgs";
 
 interface ProjectInterface {
   name: string;
@@ -18,6 +18,13 @@ interface State {
 class Projects extends Component<{}, State> {
   state = {
     projects: [
+      {
+        name: "Demacia Website",
+        description: "A website I made for my FRC team",
+        link: "https://demacia5635.github.io/",
+        codeLink: "https://github.com/Demacia5635/demacia5635.github.io",
+        svg: <Demacia />
+      },
       {
         name: "School Website",
         description: "A school website I made for my capstone project",
