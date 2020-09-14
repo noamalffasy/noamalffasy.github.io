@@ -21,7 +21,7 @@ class Projects extends Component<{}, State> {
       {
         name: "School Website",
         description: "A school website I made for my capstone project",
-        link: "https://noamalffasy.me/SchoolWebsite/",
+        link: "https://noamalffasy.github.io/SchoolWebsite/",
         codeLink: "https://github.com/noamalffasy/SchoolWebsite",
         svg: <SchoolWebsite />
       },
@@ -36,7 +36,7 @@ class Projects extends Component<{}, State> {
       {
         name: "Hebrew Game",
         description: "A game I made for a Hebrew work",
-        link: "https://noamalffasy.me/HebrewWork/",
+        link: "https://noamalffasy.github.io/HebrewWork/",
         codeLink: "https://github.com/noamalffasy/HebrewWork",
         svg: <HebrewGame />
       },
