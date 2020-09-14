@@ -22,7 +22,7 @@ jobs:
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
-          REPO: git@github.com:noamalffasy/noamalffasy.github.io.git
+          REPO: self
           BRANCH: master
           FOLDER: out
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.GITHUB_TOKEN }}
