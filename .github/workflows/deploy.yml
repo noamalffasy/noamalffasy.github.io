@@ -14,10 +14,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: npm install and predeploy scripts
-        run: |
-          npm install
-          npm run predeploy
+
+      - name: Install modules
+        run: yarn
+
+      - name: Run predeploy scripts
+        run: yarn predeploy
 
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
