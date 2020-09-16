@@ -1,9 +1,6 @@
 import * as React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 
-import "bootstrap/dist/css/bootstrap-reboot.min.css";
-import "bootstrap/dist/css/bootstrap-grid.min.css";
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);

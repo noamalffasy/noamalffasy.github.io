@@ -4,6 +4,9 @@ import App, { Container } from "next/app";
 
 import Navbar from "components/Navbar";
 
+import "bootstrap/dist/css/bootstrap-reboot.min.css";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
