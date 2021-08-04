@@ -1,10 +1,10 @@
-const scrollTo = id => {
+const scrollTo = (id: string) => {
   const duration = 300;
-  const elem: HTMLDivElement = document.querySelector(id);
+  const elem = document.querySelector(id) as HTMLDivElement;
   const elementY = elem.offsetTop;
   const startingY = window.pageYOffset;
   const diff = elementY - startingY;
-  let start;
+  let start: number;
 
   // Bootstrap our animation - it will get called right before next frame shall be rendered.
   window.requestAnimationFrame(function step(timestamp) {

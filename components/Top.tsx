@@ -4,14 +4,11 @@ import { Component } from "react";
 import scrollTo from "utils/scrollTo";
 
 class Top extends Component {
-  scrollTo = e => {
+  scrollTo: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
 
-    const elem: HTMLAnchorElement = e.target;
-
-    console.log(e.target);
-
-    const id = elem.getAttribute("href");
+    const elem = e.target as HTMLAnchorElement;
+    const id = elem.getAttribute("href")!;
 
     scrollTo(id);
   };
