@@ -4,6 +4,7 @@
   "repository": "git+https://github.com/noamalffasy/portfolio.git",
   "scripts": {
     "dev": "next",
+    "lint": "next lint",
     "build": "next build",
     "start": "next start",
     "export": "next export",
@@ -20,15 +21,23 @@
   "homepage": "https://github.com/noamalffasy/portfolio#readme",
   "private": false,
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "@heroicons/react": "^1.0.3",
+    "classnames": "^2.3.1",
     "next": "^11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scrollspy": "^3.4.3"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "autoprefixer": "^10.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
+    "gulp": "^4.0.2",
+    "pageres": "^6.2.3",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7",
+    "tailwindcss-padding-safe": "^1.0.5",
     "typescript": "^4.3.5"
   }
 }
