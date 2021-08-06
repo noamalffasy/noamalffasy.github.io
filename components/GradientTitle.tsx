@@ -1,19 +1,20 @@
 import classNames from "classnames";
 
 interface GradientTitleProps {
+  className: string;
   gradient: string;
   children: React.ReactChild;
 }
 
-const GradientTitle = ({ gradient, children }: GradientTitleProps) => {
+const GradientTitle = ({ className, gradient, children }: GradientTitleProps) => {
   return (
     <h2
       className={classNames(
         "font-black",
-        "text-3xl sm:text-5xl",
         "bg-clip-text text-transparent",
         "bg-gradient-to-l",
-        gradient
+        gradient,
+        className
       )}
     >
       {children}

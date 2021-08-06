@@ -149,7 +149,12 @@ const Project = ({
           <div className="flex items-center">
             <div className="inline-flex items-start">
               {doesNeedTitle ? (
-                <GradientTitle gradient={gradientClass}>{title}</GradientTitle>
+                <GradientTitle
+                  className="text-3xl sm:text-4xl md:text-5xl"
+                  gradient={gradientClass}
+                >
+                  {title}
+                </GradientTitle>
               ) : (
                 <SVG className="h-24 md:h-28" />
               )}
