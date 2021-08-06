@@ -108,7 +108,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
+    <div className="container px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
       {projects.map((project, i) => {
         return <Project {...project} key={i} />;
       })}
@@ -136,8 +136,8 @@ const Project = ({
   colors: { color, gradientClass },
 }: ProjectProps) => {
   return (
-    <div className="relative text-center h-full w-full rounded-2xl overflow-hidden text-gray-900 space-y-6">
-      <div className="relative flex justify-center pt-6 lg:mx-8">
+    <div className="text-center h-full w-full rounded-2xl overflow-hidden text-gray-900 space-y-6">
+      <div className="flex justify-center pt-6 lg:mx-8">
         <SiteScreenshot imgName={imgName} title={title} />
       </div>
       <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe">
@@ -151,7 +151,7 @@ const Project = ({
             <div className="inline-flex items-start">
               {doesNeedTitle ? (
                 <GradientTitle
-                  className="text-3xl sm:text-4xl md:text-5xl"
+                  className="text-3xl sm:text-4xl"
                   gradient={gradientClass}
                 >
                   {title}
@@ -211,30 +211,33 @@ interface SiteScreenshotProps {
 
 const SiteScreenshot = ({ imgName, title }: SiteScreenshotProps) => {
   return (
-    <picture className="rounded-lg overflow-hidden shadow-center">
-      {[1536, 1280, 1024, 768, 640].map((size, i) => (
-        <React.Fragment key={i}>
-          <source
-            media={`(min-width: ${size}px)`}
-            srcSet={`/img/screenshots/${imgName}-${size}.webp`}
-            type="image/webp"
+    <div className="w-full h-full aspect-w-375 sm:aspect-w-128 md:aspect-w-3 lg:aspect-w-16 aspect-h-667 sm:aspect-h-113 md:aspect-h-4 lg:aspect-h-9">
+      <picture className="rounded-lg overflow-hidden shadow-center">
+        {[1536, 1280, 1024, 768, 640].map((size, i) => (
+          <React.Fragment key={i}>
+            <source
+              media={`(min-width: ${size}px)`}
+              srcSet={`/img/screenshots/${imgName}-${size}.webp`}
+              type="image/webp"
             />
-          <source
-            media={`(min-width: ${size}px)`}
-            srcSet={`/img/screenshots/${imgName}-${size}.jpg`}
-            type="image/jpg"
-          />
-        </React.Fragment >
-      ))}
-      <source
-        srcSet={`/img/screenshots/${imgName}-375.webp`}
-        type="image/webp"
-      />
-      <img
-        src={`/img/screenshots/${imgName}-375.jpg`}
-        alt={`A screenshot from ${title}`}
-      />
-    </picture>
+            <source
+              media={`(min-width: ${size}px)`}
+              srcSet={`/img/screenshots/${imgName}-${size}.jpg`}
+              type="image/jpg"
+            />
+          </React.Fragment>
+        ))}
+        <source
+          srcSet={`/img/screenshots/${imgName}-375.webp`}
+          type="image/webp"
+        />
+        <img
+          className="object-cover w-full h-full object-left-top"
+          src={`/img/screenshots/${imgName}-375.jpg`}
+          alt={`A screenshot from ${title}`}
+        />
+      </picture>
+    </div>
   );
 };
 
