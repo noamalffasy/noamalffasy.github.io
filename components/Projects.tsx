@@ -211,12 +211,12 @@ interface SiteScreenshotProps {
 const SiteScreenshot = ({ imgName, title }: SiteScreenshotProps) => {
   return (
     <picture className="rounded-lg overflow-hidden shadow-center">
-      <source media="(min-width: 1536px)" srcSet={`/img/${imgName}-1920.png`} />
+      <source media="(min-width: 1536px)" srcSet={`/img/screenshots/${imgName}-1920.png`} />
       <source media="(min-width: 1280px)" srcSet={`/img/${imgName}-1280.png`} />
-      <source media="(min-width: 1024px)" srcSet={`/img/${imgName}-1024.png`} />
-      <source media="(min-width: 768px)" srcSet={`/img/${imgName}-768.png`} />
-      <source media="(min-width: 640px)" srcSet={`/img/${imgName}-640.png`} />
-      <img src={`/img/${imgName}-375.png`} alt={`A screenshot from ${title}`} />
+      <source media="(min-width: 1024px)" srcSet={`/img/screenshots/${imgName}-1024.png`} />
+      <source media="(min-width: 768px)" srcSet={`/img/screenshots/${imgName}-768.png`} />
+      <source media="(min-width: 640px)" srcSet={`/img/screenshots/${imgName}-640.png`} />
+      <img src={`/img/screenshots/${imgName}-375.png`} alt={`A screenshot from ${title}`} />
     </picture>
   );
 };

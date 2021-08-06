@@ -25,7 +25,7 @@ async function screenshotTask() {
         "1280x720",
         "1920x1080",
       ])
-      .dest(path.resolve(__dirname, "public", "img"))
+      .dest(path.resolve(__dirname, "public", "img", "screenshots"))
       .run();
   }
 }
