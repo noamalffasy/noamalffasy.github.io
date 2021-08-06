@@ -17,6 +17,7 @@ import GitHubIcon from "components/icons/GitHubIcon";
 
 import Circle from "components/Circle";
 import GradientTitle from "components/GradientTitle";
+import React from "react";
 
 const Projects = () => {
   const projects = useMemo(
@@ -211,12 +212,28 @@ interface SiteScreenshotProps {
 const SiteScreenshot = ({ imgName, title }: SiteScreenshotProps) => {
   return (
     <picture className="rounded-lg overflow-hidden shadow-center">
-      <source media="(min-width: 1536px)" srcSet={`/img/screenshots/${imgName}-1920.png`} />
-      <source media="(min-width: 1280px)" srcSet={`/img/${imgName}-1280.png`} />
-      <source media="(min-width: 1024px)" srcSet={`/img/screenshots/${imgName}-1024.png`} />
-      <source media="(min-width: 768px)" srcSet={`/img/screenshots/${imgName}-768.png`} />
-      <source media="(min-width: 640px)" srcSet={`/img/screenshots/${imgName}-640.png`} />
-      <img src={`/img/screenshots/${imgName}-375.png`} alt={`A screenshot from ${title}`} />
+      {[1536, 1280, 1024, 768, 640].map((size, i) => (
+        <React.Fragment key={i}>
+          <source
+            media={`(min-width: ${size}px)`}
+            srcSet={`/img/screenshots/${imgName}-${size}.webp`}
+            type="image/webp"
+            />
+          <source
+            media={`(min-width: ${size}px)`}
+            srcSet={`/img/screenshots/${imgName}-${size}.jpg`}
+            type="image/jpg"
+          />
+        </React.Fragment >
+      ))}
+      <source
+        srcSet={`/img/screenshots/${imgName}-375.webp`}
+        type="image/webp"
+      />
+      <img
+        src={`/img/screenshots/${imgName}-375.jpg`}
+        alt={`A screenshot from ${title}`}
+      />
     </picture>
   );
 };

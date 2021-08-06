@@ -1,7 +1,10 @@
-const Pageres = require("pageres");
 const path = require("path");
 
-async function screenshotTask() {
+const gulp = require("gulp");
+const Pageres = require("pageres");
+const webp = require("gulp-webp");
+
+async function screenshotSites() {
   const sites = [
     { name: "demacia", url: "https://demacia5635.github.io/" },
     { name: "school", url: "https://noamalffasy.github.io/SchoolWebsite/" },
@@ -13,6 +16,7 @@ async function screenshotTask() {
   for (const site of sites) {
     await new Pageres({
       filename: `${site.name}-<%= width %>`,
+      format: "jpg",
       crop: true,
       delay: 15,
       launchOptions: { args: ["--autoplay-policy=no-user-gesture-required"] },
@@ -23,11 +27,20 @@ async function screenshotTask() {
         "768x1024",
         "1024x768",
         "1280x720",
-        "1920x1080",
+        "1536x864",
       ])
       .dest(path.resolve(__dirname, "public", "img", "screenshots"))
       .run();
   }
 }
 
-exports.default = screenshotTask;
+function convertToWebP() {
+  return gulp
+    .src("public/img/screenshots/*.jpg")
+    .pipe(webp())
+    .pipe(gulp.dest("public/img/screenshots"));
+}
+
+exports.screenshotSites = screenshotSites;
+exports.convertToWebP = convertToWebP;
+exports.default = gulp.series(screenshotSites, convertToWebP);
