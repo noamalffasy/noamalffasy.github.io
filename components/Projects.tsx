@@ -12,7 +12,7 @@ import {
   Demacia,
 } from "components/svgs";
 
-import SVGIcon from "components/svgs/SVGIcon";
+import WebsiteIcon from "components/svgs/SVGIcon";
 import GitHubIcon from "components/icons/GitHubIcon";
 
 import Circle from "components/Circle";
@@ -32,7 +32,7 @@ const Projects = () => {
           site: "https://demacia5635.github.io/",
           code: "https://github.com/Demacia5635/demacia5635.github.io",
         },
-        SVG: Demacia,
+        Icon: Demacia,
         colors: {
           color: "rgb(82,47,156)",
           gradientClass: "from-purple-500 to-[rgb(82,47,156)]",
@@ -49,7 +49,7 @@ const Projects = () => {
           site: "https://noamalffasy.github.io/SchoolWebsite/",
           code: "https://github.com/noamalffasy/SchoolWebsite",
         },
-        SVG: SchoolWebsite,
+        Icon: SchoolWebsite,
         colors: {
           color: "rgb(62,97,143)",
           gradientClass: "from-blue-500 to-[#3e618f]",
@@ -67,7 +67,7 @@ const Projects = () => {
           site: "https://oyah-200816.appspot.com",
           code: "https://github.com/noamalffasy/Oyah",
         },
-        SVG: Oyah,
+        Icon: Oyah,
         colors: {
           color: "#cc0000",
           gradientClass: "from-gray-100 to-gray-200",
@@ -84,7 +84,7 @@ const Projects = () => {
           site: "https://noamalffasy.github.io/HebrewWork/",
           code: "https://github.com/noamalffasy/HebrewWork",
         },
-        SVG: HebrewGame,
+        Icon: HebrewGame,
         colors: { color: "#a00", gradientClass: "from-red-500 to-[#a00]" },
       },
       {
@@ -96,7 +96,7 @@ const Projects = () => {
             "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
         },
         links: { site: "https://elmix-website.herokuapp.com/" },
-        SVG: Elmix,
+        Icon: Elmix,
         colors: {
           color: "#3498db",
           gradientClass: "from-blue-400 to-[#3498db]",
@@ -124,14 +124,14 @@ interface ProjectProps {
   };
   links: { site: string; code?: string };
   colors: { color: string; gradientClass: string };
-  SVG: SVGIcon;
+  Icon: WebsiteIcon;
 }
 
 const Project = ({
   imgName,
   text: { doesNeedTitle, title, description },
   links,
-  SVG,
+  Icon,
   colors: { color, gradientClass },
 }: ProjectProps) => {
   return (
@@ -143,7 +143,7 @@ const Project = ({
         <div className="md:space-y-1">
           {doesNeedTitle && (
             <Circle className="p-4 h-24 sm:h-28 w-24 sm:w-28" color={color}>
-              <SVG className="h-full mx-auto" />
+              <Icon className="h-full mx-auto" />
             </Circle>
           )}
           <div className="flex items-center">
@@ -156,7 +156,7 @@ const Project = ({
                   {title}
                 </GradientTitle>
               ) : (
-                <SVG className="h-20 sm:h-24 md:h-28" />
+                <Icon className="h-20 sm:h-24 md:h-28" />
               )}
               <a
                 className="hidden md:block"
@@ -228,7 +228,10 @@ interface MobileTextLinksProps {
 
 const MobileTextLinks = ({ color, links }: MobileTextLinksProps) => {
   return (
-    <div className="text-center sm:text-xl md:hidden space-y-1" style={{ color }}>
+    <div
+      className="text-center sm:text-xl md:hidden space-y-1"
+      style={{ color }}
+    >
       <a
         className="block space-x-2"
         href={links.site}

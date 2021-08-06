@@ -1,6 +1,6 @@
-import SVGIcon from "components/svgs/SVGIcon";
+import WebsiteIcon from "components/svgs/SVGIcon";
 
-const Oyah: SVGIcon = (props) => {
+const Oyah: WebsiteIcon = (props) => {
   return (
     <svg {...props} viewBox="0 0 592 237" version="1.1">
       <defs>

@@ -1,6 +1,6 @@
-import SVGIcon from "components/svgs/SVGIcon";
+import WebsiteIcon from "components/svgs/SVGIcon";
 
-const Demacia: SVGIcon = (props) => {
+const Demacia: WebsiteIcon = (props) => {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1479 1508">
       <path

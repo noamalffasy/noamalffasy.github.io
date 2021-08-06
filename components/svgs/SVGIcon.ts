@@ -1,3 +1,3 @@
-type SVGIcon = (props: React.ComponentProps<"svg">) => JSX.Element;
+type WebsiteIcon = (props: { className: string }) => JSX.Element;
 
-export default SVGIcon;
+export default WebsiteIcon;

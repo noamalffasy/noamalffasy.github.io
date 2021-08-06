@@ -1,6 +1,6 @@
-import SVGIcon from "components/svgs/SVGIcon";
+import WebsiteIcon from "components/svgs/SVGIcon";
 
-const HebrewGame: SVGIcon = (props) => {
+const HebrewGame: WebsiteIcon = (props) => {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 825">
       <path
