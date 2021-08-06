@@ -6,7 +6,7 @@ import LinkedInIcon from "components/icons/LinkedInIcon";
 class Top extends Component {
   render() {
     return (
-      <div className="text-center px-4 pt-20 md:py-20 lg:pt-40 space-y-12">
+      <div className="text-center px-4-safe sm:px-12-safe md:max-w-4xl lg:max-w-6xl mx-auto pt-20 md:py-20 lg:pt-40 space-y-12">
         <div className="space-y-4 text-gray-900">
           <span className="text-3xl font-light">Noam Alffasy</span>
           <p className="text-5xl md:text-7xl font-light whitespace-pre-wrap max-w-5xl mx-auto">
