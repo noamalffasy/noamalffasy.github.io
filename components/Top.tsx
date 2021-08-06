@@ -10,7 +10,7 @@ class Top extends Component {
         <div className="space-y-4 text-gray-900">
           <span className="text-3xl font-light">Noam Alffasy</span>
           <p className="text-5xl md:text-7xl font-light whitespace-pre-wrap max-w-5xl mx-auto">
-            Hey there 👋 I'm an 18-year-old Full Stack Developer
+            Hey there 👋 I&apos;m an 18-year-old Full Stack Developer
           </p>
         </div>
         <div className="space-x-4">
