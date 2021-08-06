@@ -1,177 +1,238 @@
-import * as React from "react";
-import { Component } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useMemo } from "react";
 
-import { Oyah, Elmix, SchoolWebsite, HebrewGame, Demacia } from "components/svgs";
+import classNames from "classnames";
+import { ExternalLinkIcon, GlobeAltIcon } from "@heroicons/react/outline";
+
+import {
+  Oyah,
+  Elmix,
+  SchoolWebsite,
+  HebrewGame,
+  Demacia,
+} from "components/svgs";
+
+import SVGIcon from "components/svgs/SVGIcon";
+import GitHubIcon from "components/icons/GitHubIcon";
 
 interface ProjectInterface {
+  imgName: string;
   name: string;
   description: string;
   link: string;
+  isDarkText?: boolean;
+  doesNeedText: boolean;
   codeLink?: string;
-  svg: JSX.Element;
+  color: string;
+  gradient: string;
+  SVG: SVGIcon;
 }
 
-interface State {
-  projects: Array<ProjectInterface>;
-}
-
-class Projects extends Component<{}, State> {
-  state = {
-    projects: [
+const Projects = () => {
+  const projects = useMemo(
+    () => [
       {
+        imgName: "demacia",
         name: "Demacia Website",
+        doesNeedText: true,
         description: "A website I made for my FRC team",
         link: "https://demacia5635.github.io/",
         codeLink: "https://github.com/Demacia5635/demacia5635.github.io",
-        svg: <Demacia />
+        SVG: Demacia,
+        color: "rgb(82,47,156)",
+        gradient: "from-purple-500 to-[rgb(82,47,156)]",
       },
       {
+        imgName: "school",
         name: "School Website",
+        doesNeedText: true,
         description: "A school website I made for my capstone project",
         link: "https://noamalffasy.github.io/SchoolWebsite/",
         codeLink: "https://github.com/noamalffasy/SchoolWebsite",
-        svg: <SchoolWebsite />
+        SVG: SchoolWebsite,
+        color: "rgb(62,97,143)",
+        gradient: "from-blue-500 to-[#3e618f]",
       },
       {
+        imgName: "oyah",
         name: "Oyah",
+        doesNeedText: false,
+        isDarkText: true,
         description:
           "A now dead Super Smash Bros. Melee website, it includes everything from news to tutorials",
         link: "https://oyah-200816.appspot.com",
         codeLink: "https://github.com/noamalffasy/Oyah",
-        svg: <Oyah />
+        SVG: Oyah,
+        color: "#cc0000",
+        gradient: "from-gray-100 to-gray-200",
       },
       {
+        imgName: "hebrew-game",
         name: "Hebrew Game",
+        doesNeedText: true,
         description: "A game I made for a Hebrew work",
         link: "https://noamalffasy.github.io/HebrewWork/",
         codeLink: "https://github.com/noamalffasy/HebrewWork",
-        svg: <HebrewGame />
+        SVG: HebrewGame,
+        color: "#a00",
+        gradient: "from-red-500 to-[#a00]",
       },
       {
+        imgName: "elmix",
         name: "Elmix",
+        doesNeedText: false,
         description:
           "A YouTube channel website for a friend, it has whatever you expect from this kind of website",
         link: "https://elmix-website.herokuapp.com/",
-        svg: <Elmix />
-      }
-    ]
-  };
+        SVG: Elmix,
+        color: "#3498db",
+        gradient: "from-blue-400 to-[#3498db]",
+      },
+    ],
+    []
+  );
 
-  render() {
-    return (
-      <div className="Projects" id="projects">
-        <h1>Projects</h1>
-        <div className="projects">
-          {this.state.projects.map((project, i) => {
-            return <Project project={project} key={i} />;
-          })}
-        </div>
-        <style jsx>{`
-          .Projects {
-            display: flex;
-            padding: 5rem 0 0;
-            flex-flow: column;
-            align-items: center;
-            justify-content: center;
-          }
+  return (
+    <div className="px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
+      {projects.map((project, i) => {
+        return <Project project={project} key={i} />;
+      })}
+    </div>
+  );
+};
 
-          .Projects h1 {
-            font-size: 4.5rem;
-          }
-
-          .Projects p {
-            font-size: 2rem;
-            font-weight: 300;
-            text-align: center;
-            max-width: 40rem;
-            margin: 0 auto;
-            white-space: pre-wrap;
-          }
-
-          .Projects .projects {
-            display: flex;
-            margin: 1rem 0 0 0;
-            align-items: center;
-            justify-content: center;
-            flex-flow: wrap;
-          }
-        `}</style>
-      </div>
-    );
-  }
-}
-
-interface Props {
+interface ProjectProps {
   project: ProjectInterface;
 }
 
-class Project extends Component<Props> {
-  render() {
-    const { name, description, link, codeLink, svg } = this.props.project;
-    return (
-      <div className="Project">
-        {svg}
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <a href={link}>See it here</a>
-        <br />
-        {codeLink ? <a href={codeLink}>See the code here</a> : null}
-        <style jsx>{`
-          .Project {
-            text-align: center;
-            /* background: rgba(0, 0, 0, 0.025); */
-            background: #f9f9f9;
-            margin: 0 1rem 3rem;
-            padding: 1.5rem 0.5rem;
-            /* width: calc((100% * 1 / 2) - (1rem * 2)); */
-            /* box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15); */
-            transition: all 0.3s;
-          }
-
-          .Project:hover {
-            box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.15);
-          }
-
-          .Project h2 {
-            font-size: 3rem;
-          }
-
-          .Project p {
-            font-size: 1.5rem;
-            font-weight: 300;
-          }
-
-          .Project a {
-            display: inline-block;
-            font-size: 1.15rem;
-            font-weight: 300;
-            margin: 0.5rem auto 0;
-          }
-
-          .Project a::after {
-            content: " ›";
-          }
-
-          @media (min-width: 768px),
-            @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-            .Project {
-              width: calc((100% * 1 / 2) - (1rem * 2));
-            }
-          }
-        `}</style>
-        <style jsx global>{`
-          .Project svg {
-            max-width: 80%;
-            box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
-            border-radius: 0.3rem;
-            margin: 0 0 1rem 0;
-            pointer-events: none;
-            cursor: default;
-          }
-        `}</style>
+const Project = ({
+  project: {
+    name,
+    description,
+    link,
+    codeLink,
+    SVG,
+    imgName,
+    doesNeedText,
+    color,
+    gradient,
+  },
+}: ProjectProps) => {
+  return (
+    <div className="text-center py-8">
+      <div
+        className={`relative h-full w-full rounded-2xl overflow-hidden text-gray-900`}
+      >
+        <div className="relative flex justify-center pt-6 lg:mx-8">
+          <picture className="rounded-lg overflow-hidden shadow-center">
+            <source
+              media="(min-width: 1536px)"
+              srcSet={`/img/${imgName}-1920.png`}
+            />
+            <source
+              media="(min-width: 1280px)"
+              srcSet={`/img/${imgName}-1280.png`}
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcSet={`/img/${imgName}-1024.png`}
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet={`/img/${imgName}-768.png`}
+            />
+            <source
+              media="(min-width: 640px)"
+              srcSet={`/img/${imgName}-640.png`}
+            />
+            <img
+              src={`/img/${imgName}-375.png`}
+              alt={`A screenshot from ${name}`}
+            />
+          </picture>
+        </div>
+        <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe pt-8">
+          <div className="md:space-y-1">
+            {doesNeedText && (
+              <div
+                className="inline-block rounded-full p-4 h-28 w-28"
+                style={{ backgroundColor: color }}
+              >
+                <SVG className="h-full mx-auto" />
+              </div>
+            )}
+            <div className="flex items-center">
+              <div className="inline-flex items-start">
+                {doesNeedText ? (
+                  <h2
+                    className={`font-black text-3xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-l ${gradient}`}
+                  >
+                    {name}
+                  </h2>
+                ) : (
+                  <SVG className="h-24 md:h-28" />
+                )}
+                <a
+                  className="hidden md:block"
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ExternalLinkIcon
+                    className={classNames(
+                      "inline-block",
+                      "h-4 sm:h-6",
+                      "w-4 sm:w-6",
+                      "ml-1",
+                      {
+                        "mt-2": !doesNeedText,
+                      }
+                    )}
+                    color={color}
+                  />
+                </a>
+              </div>
+              {codeLink && (
+                <a
+                  className="hidden md:inline-block"
+                  href={codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GitHubIcon className="inline-block h-8 w-8 ml-2" />
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="md:max-w-xl mx-auto mt-2">
+            <div className="text-center md:hidden space-y-1" style={{ color }}>
+              <a
+                className="block space-x-2"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GlobeAltIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-500" />
+                <span>See the site &gt;</span>
+              </a>
+              <a
+                className="block space-x-2"
+                href={codeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-900" />
+                <span>See the code &gt;</span>
+              </a>
+            </div>
+            <p className="mt-2 text-lg sm:text-2xl font-light opacity-70">
+              {description}
+            </p>
+          </div>
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Projects;
