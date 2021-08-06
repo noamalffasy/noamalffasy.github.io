@@ -135,11 +135,11 @@ const Project = ({
   colors: { color, gradientClass },
 }: ProjectProps) => {
   return (
-    <div className="relative text-center h-full w-full rounded-2xl overflow-hidden text-gray-900">
+    <div className="relative text-center h-full w-full rounded-2xl overflow-hidden text-gray-900 space-y-6">
       <div className="relative flex justify-center pt-6 lg:mx-8">
         <SiteScreenshot imgName={imgName} title={title} />
       </div>
-      <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe pt-8">
+      <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe">
         <div className="md:space-y-1">
           {doesNeedTitle && (
             <Circle className="p-4 h-28 w-28" color={color}>
