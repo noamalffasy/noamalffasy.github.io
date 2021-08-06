@@ -142,7 +142,7 @@ const Project = ({
       <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe">
         <div className="md:space-y-1">
           {doesNeedTitle && (
-            <Circle className="p-4 h-28 w-28" color={color}>
+            <Circle className="p-4 h-24 sm:h-28 w-24 sm:w-28" color={color}>
               <SVG className="h-full mx-auto" />
             </Circle>
           )}
@@ -156,7 +156,7 @@ const Project = ({
                   {title}
                 </GradientTitle>
               ) : (
-                <SVG className="h-24 md:h-28" />
+                <SVG className="h-20 sm:h-24 md:h-28" />
               )}
               <a
                 className="hidden md:block"
@@ -228,14 +228,14 @@ interface MobileTextLinksProps {
 
 const MobileTextLinks = ({ color, links }: MobileTextLinksProps) => {
   return (
-    <div className="text-center md:hidden space-y-1" style={{ color }}>
+    <div className="text-center sm:text-xl md:hidden space-y-1" style={{ color }}>
       <a
         className="block space-x-2"
         href={links.site}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <GlobeAltIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-500" />
+        <GlobeAltIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] sm:mb-[0.25rem] text-gray-500" />
         <span>See the site &gt;</span>
       </a>
       {links.code && (
@@ -245,7 +245,7 @@ const MobileTextLinks = ({ color, links }: MobileTextLinksProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GitHubIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-900" />
+          <GitHubIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] sm:mb-[0.25rem] text-gray-900" />
           <span>See the code &gt;</span>
         </a>
       )}
