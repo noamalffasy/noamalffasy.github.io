@@ -233,15 +233,17 @@ const MobileTextLinks = ({ color, links }: MobileTextLinksProps) => {
         <GlobeAltIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-500" />
         <span>See the site &gt;</span>
       </a>
-      <a
-        className="block space-x-2"
-        href={links.code}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GitHubIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-900" />
-        <span>See the code &gt;</span>
-      </a>
+      {links.code && (
+        <a
+          className="block space-x-2"
+          href={links.code}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubIcon className="inline-flex self-center h-6 w-6 mb-[0.125rem] text-gray-900" />
+          <span>See the code &gt;</span>
+        </a>
+      )}
     </div>
   );
 };
