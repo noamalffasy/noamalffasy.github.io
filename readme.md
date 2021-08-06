@@ -2,4 +2,4 @@
 
 This is my portfolio
 
-You can see it [here](https://noamalffasy.me/)
+You can see it [here](https://noamalffasy.vercel.app/)
