@@ -164,6 +164,7 @@ const Project = ({
                 href={links.site}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={`A link to ${title}`}
               >
                 <ExternalLinkIcon
                   className={classNames(
@@ -185,6 +186,7 @@ const Project = ({
                 href={links.code}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`A link to ${title}'s code`}
               >
                 <GitHubIcon className="inline-block h-8 w-8 ml-2" />
               </a>

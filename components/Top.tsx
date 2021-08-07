@@ -18,6 +18,7 @@ class Top extends Component {
             href="https://linkedin.com/in/noam-alffasy-207b0a218/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="My LinkedIn Profile"
           >
             <LinkedInIcon className="inline-block h-6 md:h-8 w-6 md:w-8" />
           </a>
@@ -25,6 +26,7 @@ class Top extends Component {
             href="https://github.com/noamalffasy"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="My GitHub Profile"
           >
             <GitHubIcon className="inline-block h-6 md:h-8 w-6 md:w-8" />
           </a>
