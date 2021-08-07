@@ -251,7 +251,7 @@ interface MobileTextLinksProps {
 const MobileTextLinks = ({ color, links }: MobileTextLinksProps) => {
   return (
     <div
-      className="text-center sm:text-xl md:hidden space-y-1"
+      className="text-center sm:text-xl md:hidden space-y-2"
       style={{ color }}
     >
       <a
