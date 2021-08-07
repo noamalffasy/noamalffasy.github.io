@@ -108,7 +108,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="container px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
+    <div className="px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
       {projects.map((project, i) => {
         return <Project {...project} key={i} />;
       })}
@@ -151,7 +151,7 @@ const Project = ({
             <div className="inline-flex items-start">
               {doesNeedTitle ? (
                 <GradientTitle
-                  className="text-3xl sm:text-4xl"
+                  className="text-3xl sm:text-4xl md:text-5xl"
                   gradient={gradientClass}
                 >
                   {title}
