@@ -108,7 +108,7 @@ const Projects = () => {
   );
 
   return (
-    <div className="px-4-safe sm:px-8-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-32 lg:gap-y-16">
+    <div className="px-4-safe sm:px-8-safe lg:px-16-safe mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 xl:gap-x-20 gap-y-32 lg:gap-y-16">
       {projects.map((project, i) => {
         return <Project {...project} key={i} />;
       })}
@@ -137,7 +137,7 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <div className="text-center h-full w-full rounded-2xl overflow-hidden text-gray-900 space-y-6">
-      <div className="flex justify-center pt-6 lg:mx-8">
+      <div className="flex justify-center pt-6">
         <SiteScreenshot imgName={imgName} title={title} />
       </div>
       <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe">
@@ -211,8 +211,8 @@ interface SiteScreenshotProps {
 
 const SiteScreenshot = ({ imgName, title }: SiteScreenshotProps) => {
   return (
-    <div className="w-full h-full aspect-w-375 sm:aspect-w-128 md:aspect-w-3 lg:aspect-w-16 aspect-h-667 sm:aspect-h-113 md:aspect-h-4 lg:aspect-h-9">
-      <picture className="rounded-lg overflow-hidden shadow-center">
+    <div className="flex flex-col w-full h-full aspect-w-375 sm:aspect-w-128 md:aspect-w-3 lg:aspect-w-16 aspect-h-667 sm:aspect-h-113 md:aspect-h-4 lg:aspect-h-9">
+      <picture className="rounded-lg overflow-hidden shadow-center flex-1">
         {[1536, 1280, 1024, 768, 640].map((size, i) => (
           <React.Fragment key={i}>
             <source
