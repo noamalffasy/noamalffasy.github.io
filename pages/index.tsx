@@ -26,7 +26,7 @@ class Index extends Component {
           twitter={{
             handle: "@noamalffasy",
             site: "@noamalffasy",
-            cardType: "summary_larrge_image",
+            cardType: "summary_large_image",
           }}
           additionalMetaTags={[
             {
