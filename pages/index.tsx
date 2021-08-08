@@ -30,7 +30,7 @@ class Index extends Component {
           }}
           additionalMetaTags={[
             {
-              property: "twitter:image",
+              name: "twitter:image",
               content: "https://noamalffasy.vercel.app/img/og-image.png",
             },
           ]}
