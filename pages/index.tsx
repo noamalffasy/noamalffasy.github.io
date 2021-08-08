@@ -26,7 +26,14 @@ class Index extends Component {
           twitter={{
             handle: "@noamalffasy",
             site: "@noamalffasy",
+            cardType: "summary_larrge_image",
           }}
+          additionalMetaTags={[
+            {
+              property: "twitter:image",
+              content: "https://noamalffasy.vercel.app/img/og-image.png",
+            },
+          ]}
         />
         <Top />
         <Projects />
