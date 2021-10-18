@@ -1,7 +1,8 @@
-import Oyah from "./Oyah";
-import Elmix from "./Elmix";
 import Demacia from "./Demacia";
-import SchoolWebsite from "./SchoolWebsite";
+import Elmix from "./Elmix";
 import HebrewGame from "./HebrewGame";
+import MichalOr from "./MichalOr";
+import Oyah from "./Oyah";
+import SchoolWebsite from "./SchoolWebsite";
 
-export { Oyah, Elmix, SchoolWebsite, Demacia, HebrewGame };
+export { Oyah, Elmix, SchoolWebsite, Demacia, HebrewGame, MichalOr };

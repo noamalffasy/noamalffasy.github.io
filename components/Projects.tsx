@@ -10,6 +10,7 @@ import {
   SchoolWebsite,
   HebrewGame,
   Demacia,
+  MichalOr,
 } from "components/svgs";
 
 import WebsiteIcon from "components/svgs/SVGIcon";
@@ -22,6 +23,23 @@ import React from "react";
 const Projects = () => {
   const projects = useMemo(
     () => [
+      {
+        imgName: "michal-or",
+        text: {
+          doesNeedTitle: true,
+          title: "Michal Or's Website",
+          description: "A website I made for a coacher",
+        },
+        links: {
+          site: "https://urstar.co.il/"
+        },
+        Icon: MichalOr,
+        colors: {
+          bg: "rgb(251,207,232)",
+          color: "#f17aba",
+          gradientClass: "from-pink-300 to-pink-400",
+        },
+      },
       {
         imgName: "demacia",
         text: {
@@ -124,7 +142,7 @@ interface ProjectProps {
     description: string;
   };
   links: { site: string; code?: string };
-  colors: { color: string; gradientClass: string };
+  colors: { bg?: string; color: string; gradientClass: string };
   Icon: WebsiteIcon;
 }
 
@@ -133,7 +151,7 @@ const Project = ({
   text: { doesNeedTitle, title, description },
   links,
   Icon,
-  colors: { color, gradientClass },
+  colors: { bg, color, gradientClass },
 }: ProjectProps) => {
   return (
     <div className="text-center h-full w-full rounded-2xl overflow-hidden text-gray-900 space-y-6">
@@ -143,7 +161,7 @@ const Project = ({
       <div className="flex flex-col justify-center items-center px-4-safe md:px-8-safe">
         <div className="md:space-y-1">
           {doesNeedTitle && (
-            <Circle className="p-4 h-24 sm:h-28 w-24 sm:w-28" color={color}>
+            <Circle className="p-4 h-24 sm:h-28 w-24 sm:w-28" color={bg ?? color}>
               <Icon className="h-full mx-auto" />
             </Circle>
           )}

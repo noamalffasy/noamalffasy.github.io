@@ -6,6 +6,7 @@ const webp = require("gulp-webp");
 
 async function screenshotSites() {
   const sites = [
+    { name: "michal-or", url: "https://urstar.co.il/" },
     { name: "demacia", url: "https://demacia5635.github.io/" },
     { name: "school", url: "https://noamalffasy.github.io/SchoolWebsite/" },
     { name: "oyah", url: "https://oyah-200816.appspot.com" },
